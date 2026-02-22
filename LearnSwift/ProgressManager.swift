@@ -1,7 +1,7 @@
 import Foundation
 
 // MARK: - Progress Manager
-// Persists which lessons are completed using UserDefaults.
+// Persists completed lessons using UserDefaults.
 
 class ProgressManager: ObservableObject {
     static let shared = ProgressManager()
@@ -10,9 +10,7 @@ class ProgressManager: ObservableObject {
 
     private let storageKey = "completedLessons"
 
-    private init() {
-        load()
-    }
+    private init() { load() }
 
     func markCompleted(_ lessonID: Int) {
         completedLessonIDs.insert(lessonID)

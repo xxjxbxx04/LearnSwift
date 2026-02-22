@@ -1,5 +1,21 @@
 import Foundation
 
+// MARK: - Lesson Section (groups lessons into chapters)
+
+struct LessonSection: Identifiable {
+    let id: Int
+    let title: String
+    let emoji: String
+    let description: String
+    let lessons: [Lesson]
+
+    var completedCount: Int {
+        lessons.filter { ProgressManager.shared.isCompleted($0.id) }.count
+    }
+
+    var isFullyComplete: Bool { completedCount == lessons.count }
+}
+
 // MARK: - Lesson Model
 
 struct Lesson: Identifiable {
@@ -15,13 +31,7 @@ struct Lesson: Identifiable {
     enum Difficulty: String {
         case beginner = "Beginner"
         case intermediate = "Intermediate"
-
-        var color: String {
-            switch self {
-            case .beginner: return "green"
-            case .intermediate: return "orange"
-            }
-        }
+        case advanced = "Advanced"
     }
 }
 
