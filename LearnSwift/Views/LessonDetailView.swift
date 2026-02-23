@@ -71,6 +71,7 @@ struct LessonDetailView: View {
         switch lesson.difficulty {
         case .beginner: return [.blue, .cyan]
         case .intermediate: return [.purple, .indigo]
+        case .advanced: return [.orange, .red]
         }
     }
 

@@ -2210,7 +2210,7 @@ let names = ["alice", "bob", "carol"]
 let upper = names.map { $0.capitalized }
 // ["Alice", "Bob", "Carol"]
 
-let lengths = names.map(\.count)
+let lengths = names.map(\\.count)
 // [5, 3, 5]
 
 // compactMap removes nil results
