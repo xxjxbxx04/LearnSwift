@@ -55,7 +55,7 @@ struct ErrorDictionaryView: View {
                 .font(.title2.bold())
                 .foregroundColor(.primary)
 
-            Text("No errors matched "\(searchText)".\nTry searching by message or keyword.")
+            Text("No errors matched \"\(searchText)\".\nTry searching by message or keyword.")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
@@ -95,7 +95,7 @@ private struct ErrorRowView: View {
 
             Image(systemName: "chevron.right")
                 .font(.caption)
-                .foregroundColor(.tertiaryLabel)
+                .foregroundColor(.secondary)
         }
         .padding(.vertical, 4)
     }

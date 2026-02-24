@@ -57,7 +57,7 @@ struct CheatSheetView: View {
                 .font(.title2.bold())
                 .foregroundColor(.primary)
 
-            Text("No syntax matched "\(searchText)".\nTry a different search term.")
+            Text("No syntax matched \"\(searchText)\".\nTry a different search term.")
                 .font(.subheadline)
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
