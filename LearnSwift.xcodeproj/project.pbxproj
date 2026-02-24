@@ -16,6 +16,8 @@
 		AA00000000000000000000B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000000A7 /* Assets.xcassets */; };
 		AA00000000000000000000B8 /* LessonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000000A8 /* LessonData.swift */; };
 		AA00000000000000000000B9 /* ProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000000000000000000A9 /* ProgressManager.swift */; };
+		BB00000000000000000000B1 /* GlossaryTerm.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000000000000000000A1 /* GlossaryTerm.swift */; };
+		BB00000000000000000000B2 /* GlossaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000000000000000000A2 /* GlossaryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		AA00000000000000000000A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA00000000000000000000A8 /* LessonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonData.swift; sourceTree = "<group>"; };
 		AA00000000000000000000A9 /* ProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressManager.swift; sourceTree = "<group>"; };
+		BB00000000000000000000A1 /* GlossaryTerm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryTerm.swift; sourceTree = "<group>"; };
+		BB00000000000000000000A2 /* GlossaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlossaryView.swift; sourceTree = "<group>"; };
 		AA00000000000000000000AA /* LearnSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -76,6 +80,7 @@
 			children = (
 				AA00000000000000000000A3 /* Lesson.swift */,
 				AA00000000000000000000A8 /* LessonData.swift */,
+				BB00000000000000000000A1 /* GlossaryTerm.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -86,6 +91,7 @@
 				AA00000000000000000000A4 /* HomeView.swift */,
 				AA00000000000000000000A5 /* LessonDetailView.swift */,
 				AA00000000000000000000A6 /* QuizView.swift */,
+				BB00000000000000000000A2 /* GlossaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +173,8 @@
 				AA00000000000000000000B6 /* QuizView.swift in Sources */,
 				AA00000000000000000000B8 /* LessonData.swift in Sources */,
 				AA00000000000000000000B9 /* ProgressManager.swift in Sources */,
+				BB00000000000000000000B1 /* GlossaryTerm.swift in Sources */,
+				BB00000000000000000000B2 /* GlossaryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
