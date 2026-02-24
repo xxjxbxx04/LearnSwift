@@ -11,11 +11,29 @@ struct ContentView: View {
                 }
                 .tag(0)
 
-            GlossaryView()
+            PracticeView()
                 .tabItem {
-                    Label("Glossary", systemImage: "character.book.closed.fill")
+                    Label("Practice", systemImage: "gamecontroller.fill")
                 }
                 .tag(1)
+
+            ReferenceView()
+                .tabItem {
+                    Label("Reference", systemImage: "doc.text.fill")
+                }
+                .tag(2)
+
+            SearchView()
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
+                .tag(3)
+
+            ProfileView()
+                .tabItem {
+                    Label("Me", systemImage: "person.fill")
+                }
+                .tag(4)
         }
     }
 }

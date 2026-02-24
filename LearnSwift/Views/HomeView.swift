@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var progress = ProgressManager.shared
+    @StateObject private var streak = StreakManager.shared
     @State private var expandedSections: Set<Int> = [1]
     @State private var showReset = false
 
@@ -10,6 +11,7 @@ struct HomeView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     heroBanner
+                    streakAndTipRow
                     overallProgressCard
 
                     VStack(alignment: .leading, spacing: 12) {
@@ -79,6 +81,44 @@ struct HomeView: View {
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .padding(.horizontal)
         .padding(.top, 8)
+    }
+
+    // MARK: Streak + Tip Row
+    private var streakAndTipRow: some View {
+        HStack(spacing: 12) {
+            // Streak card
+            VStack(spacing: 6) {
+                Text("🔥")
+                    .font(.system(size: 28))
+                Text("\(streak.currentStreak)")
+                    .font(.system(.title2, design: .rounded).bold())
+                    .foregroundColor(.orange)
+                Text("day streak")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 16)
+            .background(Color(.secondarySystemGroupedBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+
+            // Tip of the day card
+            VStack(alignment: .leading, spacing: 6) {
+                Label("Tip of the Day", systemImage: "lightbulb.fill")
+                    .font(.caption.bold())
+                    .foregroundColor(.yellow)
+                Text(DailyTip.today.text)
+                    .font(.caption)
+                    .foregroundColor(.primary)
+                    .lineLimit(4)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(12)
+            .background(Color(.secondarySystemGroupedBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+        }
+        .padding(.horizontal)
     }
 
     // MARK: Overall Progress Card

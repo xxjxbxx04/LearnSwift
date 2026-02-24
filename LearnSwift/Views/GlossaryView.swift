@@ -134,6 +134,7 @@ private struct CategoryChip: View {
 private struct TermCard: View {
     let term: GlossaryTerm
     @State private var isExpanded = false
+    @StateObject private var bookmarks = BookmarkManager.shared
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -168,6 +169,15 @@ private struct TermCard: View {
                     }
 
                     Spacer()
+
+                    Button {
+                        bookmarks.toggleTerm(term.term)
+                    } label: {
+                        Image(systemName: bookmarks.isTermBookmarked(term.term) ? "bookmark.fill" : "bookmark")
+                            .font(.caption)
+                            .foregroundColor(bookmarks.isTermBookmarked(term.term) ? .blue : .secondary)
+                    }
+                    .buttonStyle(.plain)
 
                     Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
                         .font(.caption)

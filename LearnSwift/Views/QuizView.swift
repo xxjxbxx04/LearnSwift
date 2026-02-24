@@ -192,6 +192,7 @@ struct QuizView: View {
         .background(Color(.systemGroupedBackground))
         .onAppear {
             if passed { progress.markCompleted(lesson.id) }
+            StatsManager.shared.recordQuiz(correct: correctCount, total: totalQuestions)
         }
     }
 

@@ -3,6 +3,7 @@ import SwiftUI
 struct LessonDetailView: View {
     let lesson: Lesson
     @StateObject private var progress = ProgressManager.shared
+    @StateObject private var bookmarks = BookmarkManager.shared
     @State private var showQuiz = false
     @State private var scrollOffset: CGFloat = 0
 
@@ -30,6 +31,16 @@ struct LessonDetailView: View {
         .background(Color(.systemGroupedBackground))
         .navigationTitle(lesson.title)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    bookmarks.toggleLesson(lesson.id)
+                } label: {
+                    Image(systemName: bookmarks.isLessonBookmarked(lesson.id) ? "bookmark.fill" : "bookmark")
+                        .foregroundColor(.blue)
+                }
+            }
+        }
         .sheet(isPresented: $showQuiz) {
             QuizView(lesson: lesson)
         }
